@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=b, initial-scale=1.0">
     <title>FCPE Jean jaurès Massy</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/popup.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     
@@ -15,18 +16,15 @@
 <body>
 <header>
     <div>
-        <h1>FCPE Jean-Jaurès MASSY</h1>
-    </div>
-    
-
+        <h1 id="titre-page">FCPE Jean-Jaurès MASSY</h1>
+    </div> 
     <nav class="liste">
         
             <a href="index.html" class="item i1">Accueil</a>
             <a href="evenements.html" class="item">Evènements</a>
-            <a href="adhesion.html" class="item">Adhésion</a>
             <a href="galerie.html" class="item">Galerie</a>
             <a href="troc.html" class="item">Troc</a>
-            <a href="seconnecter.html" class="item">Se connecter</a>     
+     
         
     </nav>
    
@@ -35,119 +33,197 @@
     
     
 <!---La div qui va contenir tous les contenus, les ronds etc-->
-    <div class="box-timeline">
+<div class="box-timeline">
+    <!--Step 1 : Adding HTML-->
+    <div>
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="button1">Connexion</button>  
+    </div>
+    <div>
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="button100">Adhésion</button>  
+    </div>
+    <div id="id01" class="modal">
+        
+        <form class="modal-content animate" action="/login.php">
+            
+			<div class="imgcontainer"> 
+				<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
+				<img src="images/monchouette.jpg" alt="mascotte chouette de la fcpe" width="100px"> 
 
-<!--div toutes simple-->
-        <div class="ligne"></div>
+			</div> 
 
-<!--div qui représenterons les ronds qu'on va mettre sur la ligne-->
-<!--div.rond.r$*4-- avec Emmet-->
-<!--data-anim est un attribut personnalisé. On peut mettre data-index, data-bloc etc-->
-<!--data-anim est un attribut qui va lier nos ronds aux box-->
-    <div class="rond r1" data-anim="1"></div>
-    <div class="rond r2" data-anim="2"></div>
-    <div class="rond r3" data-anim="3"></div>
-    <div class="rond r4" data-anim="4"></div>
-    <div class="rond r5" data-anim="5"></div>
-    <div class="rond r6" data-anim="6"></div>
+			<div class="container"> 
+                <h1 id="titre-form">Connexion</h1> 
+				<label><b>Pseudo</b></label> 
+				<input type="text" placeholder="Entrer pseudo" name="username" required> 
 
-<!--les box, qui seront liées aux ronds avec le même attribut, data-anim-->
+				<label><b>Password</b></label> 
+				<input type="password" placeholder="Enter mot de passe" name="pass" required> 
 
-    <div class="box b1" data-anim="1">
-        <h2>Evènements</h2>
-        <p>
-            Les animations et festivités vont reprendre.
-        </p>
-        <a href="evenements.html" class="btn">Voir</a>      
-    </div>
-    <div class="box b2" data-anim="2">
-        <h2>Adhésion</h2>
-        <p>
-            Un adhésion simple et pratique.
-        </p>
-        <a href="adhesion.html" class="btn">Infos</a>
-    </div>
-    <div class="box b3" data-anim="3">
-        <h2>Galerie</h2>
-        <p>
-            Visitez la galerie afin de retrouver ou découvrir tous les évènements passés.
-        </p>
-        <a href="galerie.html" class="btn">Visiter</a>
-    </div>
-    <div class="box b4" data-anim="4">
-        <h2>Troc</h2>
-        <p>
-            Des cahiers en trop, un vêtement à trouver? Par ici, vous ferez peut-être des heureux!
-        </p>
-        <a href="troc.html" class="btn">Troquons!</a>
-    </div>
-    <div class="box b5" data-anim="5">
-        <h2>Contact</h2>
-        <p>
-            Echangeons!
-        </p>
-        <a href="contact.html" class="btn">Contacter</a>
-    </div>
-    <div class="box b6" data-anim="6">
-        <h2>Newsletter</h2>
-        <p>
-            Etre informé.
-        </p>
-        <a href="newsletter.html" class="btn">S'abonner</a>
-    </div>
-       
+				<button type="submit">se connecter</button> 
+				<input type="checkbox" checked="checked"> Se souvenir de moi 
+			</div> 
+
+			<div class="container" style="background-color: #f1f1f1"> 
+				<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button> 
+				<span class="psw"> <a href="#">Mot de passe oublié?</a></span> 
+			</div> 
+		</form> 
+    </div> 
     
-</div>
+    <div id="id02" class="modal100"> 
 
-<footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h3>Découvrir</h3>
-  	 			<ul>
-  	 				<li><a href="#">Qui sommes nous</a></li>
-  	 				<li><a href="#">Nos actions</a></li>
-  	 				
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h3>s'informer</h3>
-  	 			<ul>
-  	 				<li><a href="#">actualités</a></li>
-  	 				<li><a href="#">Conseils aux parents</a></li>
-  	 				<li><a href="#">Newsletter</a></li>
-  	 				
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h3>Adhérer</h3>
-  	 			<ul>
-  	 				<li><a href="#">Pouruoi adhérer</a></li>
-  	 				<li><a href="#">Se préinscrire</a></li>
-  	 				<li><a href="#">Nous contacter</a></li>
-  	 				
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<H3>Suivez- nous</h3>
-  	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				
-  	 			</div>
-  	 		</div>
-  	 	</div>
-  	 </div>
-  </footer>
+		<form class="modal-content100 animate" action=""> 
+			<div class="imgcontainer100"> 
+				<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
+				<img src="images/monchouette.jpg" alt="mascotte chouette de la fcpe" width="100px"> 
+
+			</div> 
+
+			<div class="container100">
+                <h1 id="titre-form100">Adhésion</h1> 
+				<label><b>Nom</b></label> 
+                <input class="entrer" type="text" placeholder="Entrer votre Nom" name="name" required> 
+
+				<label><b>Prénom</b></label> 
+                <input class="entrer" type="text" placeholder="Enter votre prénom" name="surname" required> 
+                
+                <label><b>E-mail</b></label> 
+                <input class="entrer" type="email" placeholder="Enter votre mail" name="email" required>
+
+                <label><b>Téléphone</b></label> 
+				<input class="entrer" type="number" placeholder="Enter N° téléphone" name="tel">
+                
+				<button id="envoyer" type="submit">Envoyer</button>  
+			</div> 
+
+			<div class="container100" style="background-color: #f1f1f1"> 
+				<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn100">Annuler</button> 
+				 
+			</div> 
+		</form> 
+	</div> 
 
 
+    
+
+    
+
+            <!--div toutes simple-->
+            <div class="ligne"></div>
+
+            <!--div qui représenterons les ronds qu'on va mettre sur la ligne-->
+            <!--div.rond.r$*4-- avec Emmet-->
+            <!--data-anim est un attribut personnalisé. On peut mettre data-index, data-bloc etc-->
+            <!--data-anim est un attribut qui va lier nos ronds aux box-->
+            <div class="rond r1" data-anim="1"></div>
+            <div class="rond r2" data-anim="2"></div>
+            <div class="rond r3" data-anim="3"></div>
+            <div class="rond r4" data-anim="4"></div>
+            <div class="rond r5" data-anim="5"></div>
+            <div class="rond r6" data-anim="6"></div>
+
+            <!--les box, qui seront liées aux ronds avec le même attribut, data-anim-->
+
+            <div class="box b1" data-anim="1">
+                <h2>Evènements</h2>
+                <p>
+                    Les animations et festivités vont reprendre.
+                </p>
+                <a href="evenements.html" class="btn">Voir</a>
+            </div>
+            <div class="box b2" data-anim="2">
+                <h2>Adhésion</h2>
+                <p>
+                    Un adhésion simple et pratique.
+                </p>
+                <a href="adhesion.html" class="btn">Infos</a>
+            </div>
+            <div class="box b3" data-anim="3">
+                <h2>Galerie</h2>
+                <p>
+                    Visitez la galerie afin de retrouver ou découvrir tous les évènements passés.
+                </p>
+                <a href="galerie.html" class="btn">Visiter</a>
+            </div>
+            <div class="box b4" data-anim="4">
+                <h2>Troc</h2>
+                <p>
+                    Des cahiers en trop, un vêtement à trouver? Par ici, vous ferez peut-être des heureux!
+                </p>
+                <a href="troc.html" class="btn">Troquons!</a>
+            </div>
+            <div class="box b5" data-anim="5">
+                <h2>Contact</h2>
+                <p>
+                    Echangeons!
+                </p>
+                <a href="contact.html" class="btn">Contacter</a>
+            </div>
+            <div class="box b6" data-anim="6">
+                <h2>Newsletter</h2>
+                <p>
+                    Etre informé.
+                </p>
+                <a href="newsletter.html" class="btn">S'abonner</a>
+            </div>
+           
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <script src="App.js"></script>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h3>Découvrir</h3>
+                        <ul>
+                            <li><a href="#">Qui sommes nous</a></li>
+                            <li><a href="#">Nos actions</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>s'informer</h3>
+                        <ul>
+                            <li><a href="#">actualités</a></li>
+                            <li><a href="#">Conseils aux parents</a></li>
+                            <li><a href="#">Newsletter</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Adhérer</h3>
+                        <ul>
+                            <li><a href="#">Pouruoi adhérer</a></li>
+                            <li><a href="#">Se préinscrire</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <H3>Suivez- nous</H3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+        <script src="js/App.js"></script>
+       
+        
+
 </body>
 </html>
